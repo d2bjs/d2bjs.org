@@ -1,0 +1,22 @@
+<div id="show">
+	<h1 id="entry-name"><%= @entry.name %></h1>
+	<% if user_signed_in? %>
+		<div id="links">
+			<%= link_to "EDIT", edit_entry_path(@entry) %>
+			<%= link_to "DESTROY", @entry, method: :delete, data: { confirm: "Are you sure?" } %>
+		</div>
+	<% end %>
+
+	<div id="chart">
+		<%= @entry.code.html_safe %>
+	</div>
+
+	<p><i><%= @entry.description %></i></p>
+
+	<div id="md" class="markdown-body"><%= markup(@entry.markdown) %></div>
+	
+	<h2 id="entry-code">Code</h2>
+	<pre><code id="code" class="html"><%= @entry.code %></code></pre>
+
+	<script>hljs.initHighlightingOnLoad();</script>
+</div>

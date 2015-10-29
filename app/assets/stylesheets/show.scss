@@ -1,0 +1,42 @@
+#links {
+	margin: 20px 0px;
+
+	a {
+		font-size: 12px;
+		margin-right: 10px;
+		color: #444;
+		text-decoration: none;
+
+		&:hover {
+			color: black;
+			border-bottom: 1px solid black;
+		}
+	}
+}	
+
+
+#chart {
+	box-shadow: 0 0 3px #EEE;
+	overflow-x: scroll;
+
+	margin-bottom: 40px;
+}
+
+
+#show {
+	#entry-name {
+		font-size: 20px;
+		text-transform: uppercase;
+	}
+
+	#entry-code {
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+}
+
+
+#md {
+	margin-top: 60px;
+	margin-bottom: 60px;
+}

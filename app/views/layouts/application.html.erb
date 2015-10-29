@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ChartBlog</title>
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="line"></div>
+
+	<header>
+		<div id="logo"><%= link_to "VIS", "/" %></div>
+		<% if user_signed_in? %>
+			<nav>
+				<%= link_to "Upload New", "/entries/new" %>
+				<%= link_to "Sign Out", "/users/sign_out", method: :delete %>
+			</nav>
+		<% end %>
+	</header>
+
+	<div id="main">
+		<%= yield %>
+	</div>
+
+</body>
+</html>

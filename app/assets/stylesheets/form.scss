@@ -1,0 +1,57 @@
+#new_entry,
+.edit_entry {
+	.field {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	#entry_name {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	textarea {
+		height: 200px;
+	}
+
+	#new-data {
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #444;
+		text-decoration: none;
+
+		&:hover {
+			color: black;
+			border-bottom: 1px solid black;
+		}
+	}
+
+	.actions {
+		text-align: center;
+	}
+
+	#submit-form {
+		font-size: 18px;
+		border: none;
+		background-color: white;
+		color: #444;
+		cursor: pointer;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		&:hover {
+			color: black;
+			border-bottom: 2px solid black;
+		}
+	}
+}
+
+
+.data-form {
+	margin-top: 20px;
+
+	@include span-columns(6);
+	@include omega(2n);
+}

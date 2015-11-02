@@ -19,7 +19,7 @@ user = User.create email: "admin@academicdashboards.com", password: "informatics
 cat_dashboards = Category.create(
   name: 'Dashboards'
 )
-cat_web_appliactions = Category.create(
+cat_web_applications = Category.create(
   name: 'Web Applications'
 )
 cat_analytics = Category.create(
@@ -37,6 +37,13 @@ cat_other_jsplugins = Category.create(
 
 Entry.create(
   name: 'Workforce',
+  description: 'Dashboard for tracking graduates after they have left New Mexico universities.',
+  markdown: "###Dashboard Vision \n"+
+            "This dashboard was built in conjunction with workforce solutions. "+
+            "The hope is that we can now have better (more informed) "+
+            "comparisons between New Mexico universities. As well as expose "+
+            "degrees with higher salaries as well as those that lead to a "+
+            "higher contribution in the New Mexico workforce.",
   # markdown: '#Test Markdown',
   thumbnail: File.new("#{image_dir}/workforce/thumbnail.png"),
   widgets: [
@@ -47,6 +54,7 @@ Entry.create(
 
 Entry.create(
   name: 'Branch Campus Sunburst',
+  description: 'Sunburst to measure how many students are in a branch (satellite) campus. Breakdowns help to distinguish the distribution of gender, time status, etc..',
   # markdown: '#Test Markdown',
   thumbnail: File.new("#{image_dir}/branch_campus_sunburst/thumbnail.png"),
   widgets: [
@@ -56,7 +64,19 @@ Entry.create(
 )
 
 Entry.create(
+  name: 'University Dashboard',
+  description: 'Public facing dashboard built for the University of New Mexico, that provides insight for employee data, student success, student enrollment.',
+  # markdown: '#Test Markdown',
+  thumbnail: File.new("#{image_dir}/university_dashboard/thumbnail.png"),
+  widgets: [
+    IframeWidget.create(iframe_url: "http://informatics.unm.edu")
+  ],
+  categories: [cat_dashboards]
+)
+
+Entry.create(
   name: 'Faculty Gender Equality',
+  description: 'Dashboard that helps pinpoint any gender unequalities within a workplace. Takes into account salary and experience.',
   # markdown: '#Test Markdown',
   thumbnail: File.new("#{image_dir}/faculty_gender_equality/thumbnail.png"),
   widgets: [
@@ -68,4 +88,26 @@ Entry.create(
     )
   ],
   categories: [cat_dashboards]
+)
+
+Entry.create(
+  name: 'Curriculum Credit Hours',
+  description: 'Track the improvement (lowering) of required credit hours for each degree program.',
+  # markdown: '#Test Markdown',
+  thumbnail: File.new("#{image_dir}/curriculum_credit_hours/thumbnail.png"),
+  widgets: [
+    IframeWidget.create(iframe_url: "http://informatics.unm.edu/degrees/degrees.html")
+  ],
+  categories: [cat_dashboards]
+)
+
+Entry.create(
+  name: 'Degrees',
+  description: 'Help students to stay on track and plan ahead for their current or prospective degree plans.',
+  # markdown: '#Test Markdown',
+  thumbnail: File.new("#{image_dir}/degrees/thumbnail.png"),
+  widgets: [
+    IframeWidget.create(iframe_url: "http://degrees.unm.edu")
+  ],
+  categories: [cat_web_applications]
 )

@@ -1,8 +1,0 @@
-<div class="data-form">
-	<%= fields_for "datum[#{@number}]" do |f| %>
-		<label>Name</label><br>
-		<%= f.text_field "name" %>
-		<label>Data</label>
-		<%= f.text_area "content" %>
-	<% end %>
-</div>

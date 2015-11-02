@@ -13,10 +13,11 @@ gem 'd3-rails'
 gem 'redcarpet'
 gem 'github-markup'
 gem 'devise'
+gem 'cocoon'
+gem 'paperclip'
 
 group :development, :test do
 	gem 'byebug'
 	gem 'sqlite3'
 	gem 'web-console', '~> 2.0'
 end
-

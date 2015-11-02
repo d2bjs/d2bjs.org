@@ -1,0 +1,58 @@
+<li class="nested-fields widget-fields">
+	<%= link_to_remove_association f do %>
+		<i class="fa fa-times"></i>
+	<% end %>
+
+	<%= f.hidden_field :index, class: "widget-index" %>
+
+	<div class="button-group">
+	  <label>
+	    <%= f.radio_button :type, 'GeneralWidget' %>
+	    <span class="button-group-item">General</span>
+	  </label>
+	  <label>
+			<%= f.radio_button :type, 'IframeWidget' %>
+	    <span class="button-group-item">iFrame</span>
+	  </label>
+	  <label>
+			<%= f.radio_button :type, 'ImageWidget' %>
+	    <span class="button-group-item">Image</span>
+	  </label>
+	  <label>
+			<%= f.radio_button :type, 'EmbeddedWidget' %>
+	    <span class="button-group-item">Embedded</span>
+	  </label>
+	</div>
+
+	<div class="container">
+		<div class="field column-6">
+			<label>Name</label><br>
+			<%= f.text_field "name"%>
+		</div>
+		<div class="field column-6">
+			<label>Caption</label><br>
+			<%= f.text_field "caption"%>
+		</div>
+	</div>
+	<div class="field">
+		<label>Markdown</label>
+    <%= f.text_area :markdown %>
+	</div>
+
+	<div class='widget-type-forms'>
+		<div class="field general-forms">
+		</div>
+		<div class="field iframe-forms">
+			<label>Iframe URL</label><br>
+			<%= f.text_field "iframe_url"%>
+		</div>
+		<div class="field embedded-forms">
+			<label>Embedded HTML</label>
+			<%= f.text_area "embedded_code"%>
+		</div>
+		<div class="field image-forms">
+			<label>Image</label><br>
+	    <%= f.file_field :image %>
+		</div>
+	</div>
+</li>

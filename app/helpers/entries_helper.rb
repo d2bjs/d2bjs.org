@@ -3,15 +3,16 @@ require 'github/markup'
 module EntriesHelper
 
 	def markup text
+		text ||= ''
 		GitHub::Markup.render('README.markdown', text).html_safe
 	end
 
 	# def markdown(text)
 	# 	options = {
 	# 		filter_html:     true,
-	# 		hard_wrap:       true, 
+	# 		hard_wrap:       true,
 	# 		link_attributes: { rel: 'nofollow', target: "_blank" },
-	# 		space_after_headers: true, 
+	# 		space_after_headers: true,
 	# 		fenced_code_blocks: true
 	# 	}
 

@@ -1,35 +1,35 @@
 class EntriesController < ApplicationController
-	before_action :set_entry, only: [:show, :edit, :update, :destroy]
+	before_action :set_entry, only: [:show, :edit, :update, :destroy, :data, :data_form]
 	before_action :authenticate_user!, except: [:index, :show, :data]
 
 	# GET /entries
 	# GET /entries.json
 	def index
 		if user_signed_in?
-			@entries = Entry.all.reverse
+			@entries = Entry.all
 		else
 			@entries = Entry.select {|x| x.private == false}.reverse
 		end
+		@entries = @entries.sort_by{|entry| entry.updated_at }
 	end
 
 	# GET /entries/1
 	# GET /entries/1.json
 	def show
+		authenticate_user! if(@entry.private)
+
+		@widgets = @entry.widgets.sort_by{|widget| widget.index }
 	end
 
 	def data
-		@data = Datum.find {|x| x.name == params[:name]}
+		authenticate_user! if(@entry.private)
+		@data = @entry.datum.find {|x| x.name == params[:name]}
 		render plain: @data.body
 	end
 
 	# GET /entries/new
 	def new
 		@entry = Entry.new
-	end
-
-	def data_form
-		@number = params[:number]
-		render partial: 'data_form'
 	end
 
 	# GET /entries/1/edit
@@ -41,12 +41,6 @@ class EntriesController < ApplicationController
 	def create
 
 		@entry = Entry.new(entry_params)
-
-		if params[:datum]
-			params[:datum].each_value do |d|
-				@entry.datum.new name: d[:name], body: d[:content]
-			end
-		end
 
 		respond_to do |format|
 			if @entry.save
@@ -62,13 +56,6 @@ class EntriesController < ApplicationController
 	# PATCH/PUT /entries/1
 	# PATCH/PUT /entries/1.json
 	def update
-
-		if params[:datum]
-			params[:datum].each_value do |d|
-				@entry.datum.new name: d[:name], body: d[:content]
-			end
-		end
-
 		respond_to do |format|
 			if @entry.update(entry_params)
 				format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
@@ -102,6 +89,10 @@ class EntriesController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def entry_params
-			params.require(:entry).permit(:name, :description, :code, :private, :markdown)
+			params.require(:entry).permit(
+				:name, :description, :thumbnail, :code, :private, :markdown, :iframe, :category_ids => [],
+				widgets_attributes: [:id, :index, :name, :caption, :type, :iframe_url, :embedded_code, :image, :markdown, :_destroy],
+				datum_attributes: [:id, :name, :body, :_destroy]
+			)
 		end
 end

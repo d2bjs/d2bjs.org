@@ -1,0 +1,1 @@
+class IframeWidget < Widget; end

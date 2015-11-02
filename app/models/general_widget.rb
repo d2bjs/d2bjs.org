@@ -1,0 +1,1 @@
+class GeneralWidget < Widget; end

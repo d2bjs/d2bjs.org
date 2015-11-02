@@ -1,7 +1,9 @@
 <% @entries.each do |e| %>
 	<div class="entry">
 		<h2><%= link_to e.name, e %></h2>
-		<span><%= e.created_at.strftime("%b %d %Y") %></span>
 		<p><i><%= e.description %></i></p>
+		<span>
+			Updated: <%= e.updated_at.strftime("%b %d %Y") %> &mdash; Created: <%= e.created_at.strftime("%b %d %Y") %>
+		</span> 
 	</div>
 <% end %>

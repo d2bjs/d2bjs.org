@@ -1,0 +1,17 @@
+<% @entries.each do |entry| %>
+	<% next if entry.private && !user_signed_in? %>
+	<div class="entry">
+		<%= link_to entry do %>
+			<h2><%= entry.name %></h2>
+			<p><i><%= entry.description %></i></p>
+			<% if entry.thumbnail.exists? %>
+				<div class="thumbnail">
+					<%= image_tag entry.thumbnail.url %>
+				</div>
+			<% end %>
+			<span>
+				Updated: <%= entry.updated_at.strftime("%b %d %Y") %> &mdash; Created: <%= entry.created_at.strftime("%b %d %Y") %>
+			</span>
+		<% end %>
+	</div>
+<% end %>

@@ -1,0 +1,1 @@
+class EmbeddedWidget < Widget; end

@@ -1,0 +1,35 @@
+<div id="category-nav">
+  <%= link_to "Recently Updated",
+              recently_updated_path,
+              class:'category-nav-cell category-nav-item',
+              data:{current:current_page?(recently_updated_path) || current_page?(root_url)}
+  %>
+  <%= link_to "Recently Created",
+              recently_created_path,
+              class:'category-nav-cell category-nav-item',
+              data:{current:current_page?(recently_created_path)}
+  %>
+  <li class="category-menu category-nav-cell">
+    <%= link_to @category, class: "category-nav-item", data:{current:!!@category} do %>
+      <%= (@category)? @category.name : "Category" %> <i class="fa fa-caret-down"></i>
+    <% end %>
+    <ul class="submenu">
+      <% @categories.each do |category| %>
+        <% next if current_page?(category) && !user_signed_in? %>
+        <%= link_to category, data:{current:current_page?(category)} do %>
+          <li class="hover-menu">
+            <%= category.name %>
+        		<% if user_signed_in? %>
+        			<div class="links">
+          			<%= link_to "EDIT", edit_category_path(category) %>
+          			<%= link_to "DESTROY", category, method: :delete, data: { confirm: "Are you sure?" } %>
+        			</div>
+        		<% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </li>
+</div>
+
+<%= render '/entries/index' %>

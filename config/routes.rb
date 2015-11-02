@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-	root 'entries#index'
+  resources :categories
+
+	root 'categories#recently_updated'
 	resources :entries
 	devise_for :users, skip: [:registrations]
 
-	get 'data_form/:number' => 'entries#data_form'
-	get 'entries/data/:name' => 'entries#data'
+	get 'recently_updated' => 'categories#recently_updated', as: 'recently_updated'
+	get 'recently_created' => 'categories#recently_created', as: 'recently_created'
+	get 'entries/:id/data/:name' => 'entries#data'
 end

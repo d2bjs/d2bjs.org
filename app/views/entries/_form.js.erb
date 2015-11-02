@@ -1,0 +1,43 @@
+_app.refreshWidgetTypes = function(){
+  $('.widget-type-forms .field').hide();
+  $('.widget-fields').each(function(){
+    var el = $(this);
+    var type = el.find('.button-group input:checked').val();
+    el.find('.'+type+'-forms').show();
+  });
+};
+_app.refreshWidgets = function(){
+  _app.refreshWidgetTypes();
+  $('.button-group').on('change', function(){
+    _app.refreshWidgetTypes();
+  });
+
+  $('.widget-index').each(function(i){
+    $(this).val(i);
+  });
+};
+
+_app.refreshWidgets();
+
+var widgetFormSort = new Sortable($('.widget-forms')[0], {
+  animation:200,
+  fallbackOnBody: true,
+  forceFallback: false,
+  onEnd: function(){
+    _app.refreshWidgets();
+  }
+});
+
+$(".widget-forms").on("cocoon:after-insert", function(){
+	_app.refreshWidgets();
+});
+
+
+$('.widget-forms').hide();
+$('#widget-forms-header').click(function(){
+  $('.widget-forms').slideToggle();
+});
+$('.data-forms').hide();
+$('#data-forms-header').click(function(){
+  $('.data-forms').slideToggle();
+});

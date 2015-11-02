@@ -12,5 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cocoon
 //= require d3
 //= require_tree .
+
+var _app = {};
+
+
+$(document).ready(function(){
+  $('select[multiple="multiple"] option').mousedown(function(e) {
+    e.preventDefault();
+    var el = $(this);
+    el.parent().focus();
+    el.prop('selected', !el.prop('selected'));
+    return false;
+});
+});

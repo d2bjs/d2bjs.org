@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ChartBlog</title>
+	<title>IDI Showcase</title>
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= javascript_include_tag 'application' %>
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
@@ -10,14 +10,30 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="line"></div>
+	<!-- <div id="line"></div> -->
+	<div id="header-alt-wrapper">
+		<div id="header-alt">
+			<div id="idi-logo">
+				<%=image_tag 'idi_logo.png'%>
+				<span class = "idi-logo-text">
+					<span class="idi-logo-letter">I</span><div class="idi-logo-word"><span>nstitute of&nbsp;</span></div>
+					<span class="idi-logo-letter">D</span><div class="idi-logo-word"><span>esign and&nbsp;</span></div>
+					<span class="idi-logo-letter">I</span><div class="idi-logo-word"><span>nnovation</span></div>
+				</span>
+			</div>
+			<nav>
+				<%= link_to "Sign Out", "/users/sign_out", method: :delete if user_signed_in?%>
+				<%= link_to "Sign In", "/users/sign_in" if !user_signed_in?%>
+			</nav>
+		</div>
+	</div>
 
 	<header>
-		<div id="logo"><%= link_to "VIS", "/" %></div>
+		<div id="logo"><%= link_to "/" do %> SHOWCASE <% end %></div>
 		<% if user_signed_in? %>
 			<nav>
-				<%= link_to "Upload New", "/entries/new" %>
-				<%= link_to "Sign Out", "/users/sign_out", method: :delete %>
+				<%= link_to "New Category", "/categories/new" %>
+				<%= link_to "New Entry", "/entries/new" %>
 			</nav>
 		<% end %>
 	</header>
@@ -25,6 +41,8 @@
 	<div id="main">
 		<%= yield %>
 	</div>
+
+	<script> <%= 'idiLogo.animate();' if current_page?(root_url) %> </script>
 
 </body>
 </html>

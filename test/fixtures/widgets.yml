@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  iframe_url: MyString
+  embedded_code: MyText
+  image: 
+  markdown: MyText
+  caption: MyText
+  index: 1
+
+two:
+  type: 
+  iframe_url: MyString
+  embedded_code: MyText
+  image: 
+  markdown: MyText
+  caption: MyText
+  index: 1

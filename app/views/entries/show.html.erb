@@ -7,16 +7,37 @@
 		</div>
 	<% end %>
 
-	<div id="chart">
-		<%= @entry.code.html_safe %>
-	</div>
-
 	<p><i><%= @entry.description %></i></p>
 
-	<div id="md" class="markdown-body"><%= markup(@entry.markdown) %></div>
-	
-	<h2 id="entry-code">Code</h2>
-	<pre><code id="code" class="html"><%= @entry.code %></code></pre>
+	<div class="markdown-body"><%= markup(@entry.markdown) %></div>
+
+	<script>
+		var data_path = "<%= entry_path(@entry) + "/data/" %>"
+	</script>
+
+	<% @widgets.each do |widget|%>
+		<div class="widget">
+			<!-- <%= content_tag :h2, widget.name, id: 'widget-name' if !widget.name.blank? %> -->
+			<h2 id="widget-name"><%= widget.name %></h2>
+
+	    <% case widget.type %>
+	        <% when 'GeneralWidget' %>
+	        <% when 'ImageWidget' %><%= image_tag("#{widget.image.url}") %>
+	        <% when 'EmbeddedWidget' %><%= widget.embedded_code.html_safe %>
+	        <% when 'IframeWidget' %>
+						<%= content_tag :iframe, nil, src: widget.iframe_url %>
+						<%= link_to "Open in a new window.", widget.iframe_url, target: "_blank", class:"iframe-link" %>
+	    <% end %>
+		  <div class="widget-caption"><%= widget.caption %></div>
+
+			<div class="markdown-body"><%= markup(widget.markdown) %></div>
+
+			<% if widget.type == 'embedded' %>
+				<h2 id="widget-code">Code</h2>
+				<pre><code id="code" class="html"><%= widget.embedded_code %></code></pre>
+			<% end %>
+		</div>
+	<% end %>
 
 	<script>hljs.initHighlightingOnLoad();</script>
 </div>

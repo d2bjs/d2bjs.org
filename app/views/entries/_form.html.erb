@@ -1,4 +1,4 @@
-<%= form_for(@entry) do |f| %>
+<%= form_for(@entry, html: { multipart: true }) do |f| %>
 	<% if @entry.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
@@ -15,19 +15,25 @@
 		<%= f.label :name %><br>
 		<%= f.text_field :name %>
 	</div>
+
+  <div class="field">
+    <%= f.label :category_ids, "Select Categories" %><br>
+    <%= f.select :category_ids, Category.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
+  </div>
+
 	<div class="field">
-		<%= f.label :description %><br>
-		<%= f.text_area :description %>
+		<label>Thumbnail</label><br>
+    <%= f.file_field :thumbnail %>
 	</div>
 
 	<div class="container">
 		<div class="field column-6">
-			<%= f.label :markdown %><br>
-			<%= f.text_area :markdown %>
+			<%= f.label :description %><br>
+			<%= f.text_area :description %>
 		</div>
 		<div class="field column-6">
-			<%= f.label :code %><br>
-			<%= f.text_area :code %>
+			<%= f.label :markdown %><br>
+			<%= f.text_area :markdown %>
 		</div>
 	</div>
 
@@ -36,13 +42,35 @@
 		<%= f.check_box :private %>
 	</div>
 
-	<h2>Add Data Files</h2>
-	<%= link_to 'New Data +', '', id: 'new-data', remote: true %>
-	<div id="data-forms" class="container">
+	<h2 id="widget-forms-header"><i class="fa fa-caret-right"></i> Widgets</h2>
 
+	<ul class="widget-forms" class="container">
+		<div class="links">
+			<%= link_to_add_association f, :widgets, id: "new-widget", data:{ "association-insertion-method" => "after" }  do %>
+				<i class="fa fa-plus"></i> Add Widget
+			<% end %>
+		</div>
+		<%= f.fields_for :widgets do |widget| %>
+			<%= render 'widget_fields', f: widget %>
+		<% end %>
+	</ul>
+
+	<h2 id="data-forms-header"><i class="fa fa-caret-right"></i> Data Files</h2>
+
+	<div class="data-forms" class="container">
+		<div class="links">
+			<%= link_to_add_association f, :datum, id: "new-data", data:{ "association-insertion-method" => "after" }  do %>
+				<i class="fa fa-plus"></i> Add Data Set
+			<% end %>
+		</div>
+		<%= f.fields_for :datum do |datum| %>
+			<%= render 'datum_fields', f: datum %>
+		<% end %>
 	</div>
 
 	<div class="actions">
 		<%= f.submit 'Submit', id: 'submit-form' %>
 	</div>
 <% end %>
+
+<script> <%= render 'form.js' %> </script>

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318163010) do
+ActiveRecord::Schema.define(version: 20151102023659) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_entries", id: false, force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "entry_id",    null: false
+  end
 
   create_table "data", force: :cascade do |t|
     t.string   "name"
@@ -23,12 +34,15 @@ ActiveRecord::Schema.define(version: 20150318163010) do
 
   create_table "entries", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
-    t.text     "code"
-    t.boolean  "private"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.text     "markdown"
+    t.text     "description"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.boolean  "private"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,5 +62,22 @@ ActiveRecord::Schema.define(version: 20150318163010) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "widgets", force: :cascade do |t|
+    t.integer  "entry_id"
+    t.string   "type",               default: "general"
+    t.string   "name"
+    t.string   "iframe_url"
+    t.text     "embedded_code"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "markdown"
+    t.text     "caption"
+    t.integer  "index"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
 
 end

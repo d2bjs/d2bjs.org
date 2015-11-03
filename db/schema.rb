@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20151102023659) do
 
   create_table "widgets", force: :cascade do |t|
     t.integer  "entry_id"
-    t.string   "type",               default: "general"
+    t.string   "type",               default: "GeneralWidget"
     t.string   "name"
     t.string   "iframe_url"
     t.text     "embedded_code"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 20151102023659) do
     t.text     "markdown"
     t.text     "caption"
     t.integer  "index"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
 end

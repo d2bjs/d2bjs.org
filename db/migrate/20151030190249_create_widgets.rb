@@ -2,7 +2,7 @@ class CreateWidgets < ActiveRecord::Migration
   def change
     create_table :widgets do |t|
       t.integer :entry_id
-      t.string :type, default: 'general'
+      t.string :type, default: 'GeneralWidget'
       t.string :name
       t.string :iframe_url
       t.text :embedded_code

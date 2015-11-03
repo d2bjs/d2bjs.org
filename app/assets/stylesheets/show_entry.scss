@@ -10,7 +10,7 @@
 
 		&:hover {
 			color: black;
-			border-bottom: 2px dotted black;
+			border-bottom: 1px solid black;
 		}
 	}
 }
@@ -22,8 +22,7 @@
 
 	clear:both;
 
-	// border-top:2px solid #477DCA;
-	border-top:1px solid #ddd;
+	border-top:2px dotted #ddd;
 
 	iframe{
 		width: 100%;

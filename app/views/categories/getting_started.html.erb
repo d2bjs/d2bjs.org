@@ -1,0 +1,20 @@
+<div id = "getting-started">
+
+  <div class = "container" id = "page-header">
+    <h1>Getting Started</h1>
+    <p>
+      Here we will go over a few steps that will help you get started using the d2b.js library.
+    </p>
+  </div>
+
+  <ol>
+    <% @categories.each do |category| %>
+      <h2 class = "container">
+        <li>
+          <%= category.name %>
+        </li>
+      </h2>
+    <% end %>
+  </ol>
+
+</div>

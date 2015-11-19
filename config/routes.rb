@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories do
+    resources :entries#, only: [:new, :create]
+  end
+  resources :example_categories, controller: 'categories', type: 'ExampleCategory' do
+    resources :entries
+  end
+  resources :getting_started_categories, controller: 'categories', type: 'GettingStartedCategory' do
+    resources :entries
+  end
 
-	root 'categories#recently_updated'
-	resources :entries
+	root 'categories#examples'
+	resources :entries#, except: [:new, :create]
 	devise_for :users, skip: [:registrations]
 
-	get 'recently_updated' => 'categories#recently_updated', as: 'recently_updated'
-	get 'recently_created' => 'categories#recently_created', as: 'recently_created'
-	get 'entries/:id/data/:name' => 'entries#data'
+  get 'getting_started' => 'categories#getting_started', as: 'getting_started'
+  get 'examples' => 'categories#examples', as: 'examples'
+
+	# get 'entries/:id/data/:name' => 'entries#data'
 end

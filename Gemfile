@@ -15,6 +15,7 @@ gem 'github-markup'
 gem 'devise'
 gem 'cocoon'
 gem 'paperclip'
+gem 'underscore-rails'
 
 group :development, :test do
 	gem 'byebug'

@@ -1,5 +1,5 @@
-<%= form_for(@category) do |f| %>
-  <% if @category.errors.any? %>
+<%= form_for(@category, html: { multipart: true }) do |f| %>
+  <!-- <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
@@ -9,16 +9,18 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> -->
 
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
-    <%= f.label :entry_ids, "Select Entries" %><br>
-    <%= f.select :entry_ids, Entry.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
+    <%= f.label :thumbnail %><br>
+    <%= f.file_field :thumbnail %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

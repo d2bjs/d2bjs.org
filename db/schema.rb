@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102023659) do
+ActiveRecord::Schema.define(version: 20151102023511) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories_entries", id: false, force: :cascade do |t|
-    t.integer "category_id", null: false
-    t.integer "entry_id",    null: false
+    t.string   "type",                   default: "ExampleCategory"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   create_table "data", force: :cascade do |t|
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151102023659) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
+    t.integer  "category_id"
     t.boolean  "private"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -65,10 +66,9 @@ ActiveRecord::Schema.define(version: 20151102023659) do
 
   create_table "widgets", force: :cascade do |t|
     t.integer  "entry_id"
-    t.string   "type",               default: "GeneralWidget"
+    t.string   "type",               default: "EmbeddedWidget"
     t.string   "name"
     t.string   "iframe_url"
-    t.text     "embedded_code"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -76,8 +76,11 @@ ActiveRecord::Schema.define(version: 20151102023659) do
     t.text     "markdown"
     t.text     "caption"
     t.integer  "index"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.text     "html",               default: "<div class='chart'></div>"
+    t.text     "css",                default: ".chart{}"
+    t.text     "js",                 default: "var chart = d2b.CHARTS.axisChart();\n\nchart.select('.chart')\n\t.width($(window).width())\n\t.update();\n\nwindow.onresize = function(){\n\tchart.width($(window).width()).update();\n};"
+    t.datetime "created_at",                                                                                                                                                                                                               null: false
+    t.datetime "updated_at",                                                                                                                                                                                                               null: false
   end
 
 end

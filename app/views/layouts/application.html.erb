@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>IDI Showcase</title>
+	<title>D2B.js | Data to DashBoards</title>
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= javascript_include_tag 'application' %>
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<!-- <div id="line"></div> -->
-	<div id="header-alt-wrapper">
-		<div id="header-alt">
-			<div id="idi-logo">
-				<%=image_tag 'idi_logo.png'%>
-				<span class = "idi-logo-text">
-					<span class="idi-logo-letter">I</span><div class="idi-logo-word"><span>nstitute of&nbsp;</span></div>
-					<span class="idi-logo-letter">D</span><div class="idi-logo-word"><span>esign and&nbsp;</span></div>
-					<span class="idi-logo-letter">I</span><div class="idi-logo-word"><span>nnovation</span></div>
-				</span>
-			</div>
-			<nav>
-				<%= link_to "Sign Out", "/users/sign_out", method: :delete if user_signed_in?%>
-				<%= link_to "Sign In", "/users/sign_in" if !user_signed_in?%>
-			</nav>
-		</div>
-	</div>
 
 	<header>
-		<div id="logo"><%= link_to "/" do %> SHOWCASE <% end %></div>
-		<% if user_signed_in? %>
-			<nav>
-				<%= link_to "New Category", "/categories/new" %>
-				<%= link_to "New Entry", "/entries/new" %>
-			</nav>
-		<% end %>
+		<span id="logo"><%= link_to "/" do %> D2B.js | Data to DashBoards <% end %></span>
+		<nav>
+			<!--<%= link_to "Getting Started", getting_started_path %>--><!--
+			--><%= link_to "Examples", examples_path %><!--
+			--><%= link_to "Wiki", "//github.com/AcademicDashboards/d2b/wiki", target: "_blank" %><!--
+			--><%= link_to "Source", "//github.com/AcademicDashboards/d2b", target: "_blank" %>
+			<!-- <%= link_to "Sign In", "/users/sign_in" if !user_signed_in?%> -->
+			<%= link_to "Sign Out", "/users/sign_out", method: :delete if user_signed_in?%>
+		</nav>
 	</header>
 
 	<div id="main">
 		<%= yield %>
 	</div>
 
-	<script> <%= 'idiLogo.animate();' if current_page?(root_url) %> </script>
+	<footer class="container">
+		<%= image_tag 'logo_white.png' %>
+	</footer>
+
+	<%= render 'layouts/modal' %>
 
 </body>
 </html>

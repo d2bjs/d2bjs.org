@@ -1,16 +1,17 @@
 @import 'd2b.min';
 @import 'bourbon';
 @import 'neat';
+
+@import 'variables';
+
+@import 'ace';
 @import 'markdown';
 @import 'layout';
 @import 'index';
-@import 'entries';
 @import 'show_entry';
 @import 'show_category';
 @import 'form';
+@import 'header';
+@import 'examples';
 
-#show h1{
-  // font-family: "Helvetica Neue", Helvetica, sans-serif;
-  // font-size: 64px;
-  // font-weight: 300;
-}
+@import 'modal';

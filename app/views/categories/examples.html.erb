@@ -1,0 +1,60 @@
+<div id = "examples">
+
+  <div class = "container" id = "page-header">
+    <h1>Examples</h1>
+    <p>
+      Here are some examples using the charts and utilities that the d2b.js library has to offer.
+    </p>
+  </div>
+
+  <div class = "categories">
+    <% @categories.sort_by(&:name).each do |category| %>
+      <div class = "category-header">
+        <div class = "background" style="background-image:url('<%= category.thumbnail.url(:small) %>')"></div>
+        <h2 class = "container"  >
+          <%= category.name %>
+        </h2>
+
+        <% if user_signed_in? %>
+          <div class = "category-options">
+            <%= link_to "Edit", edit_category_path(category), class: "link", remote: true %> |
+            <%= link_to "Destroy", category, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
+          </div>
+        <% end %>
+      </div>
+      <div class = "container category">
+        <% category.entries.sort_by(&:name).each do |entry| %>
+          <div class = "entry">
+            <h3><%= link_to entry.name, entry, class: "link" %></h3>
+            <p>
+              <%= entry.description %>
+            </p>
+
+            <!-- <% if user_signed_in? %>
+              <%= link_to "Edit", edit_category_path(category), remote: true, class: "link" %> |
+              <%= link_to "Destroy", category, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
+            <% end %> -->
+          </div>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <div class = "entry">
+            <%= link_to new_category_entry_path(category) do %>
+              <h3 class = "link new-entry-button">New Entry +</h3>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to new_example_category_path, remote: true do %>
+        <div class = "category-header new-category-button">
+            <h2 class="container">New Category +</h2>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+
+</div>

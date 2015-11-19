@@ -1,0 +1,1 @@
+class GettingStartedCategory < Category; end

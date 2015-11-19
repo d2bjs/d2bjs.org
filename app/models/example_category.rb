@@ -1,0 +1,1 @@
+class ExampleCategory < Category; end

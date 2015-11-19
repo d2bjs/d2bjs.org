@@ -7,6 +7,7 @@ class CreateEntries < ActiveRecord::Migration
       t.text :description
       t.attachment :thumbnail
       # t.text :code
+      t.integer :category_id
       t.boolean :private
 
       t.timestamps null: false

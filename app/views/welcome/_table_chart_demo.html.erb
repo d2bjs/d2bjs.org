@@ -66,44 +66,11 @@
     }
 
     function switchSlides(){
-      // var val = Math.random();
-      // var data = {
-      //   data:{
-      //     rows: [
-      //       {
-      //         label: "Fact A",
-      //         value: rand(),
-      //         subFacts: [
-      //           {
-      //             label: "Sub Facts 1",
-      //             values: [
-      //               {
-      //                 "Sub Fact A"
-      //               }
-      //             ]
-      //           }
-      //         ]
-      //       },
-      //       {
-      //         label: "Fact B",
-      //         value: rand()
-      //       },
-      //       {
-      //         label: "Fact C",
-      //         value: rand()
-      //       },
-      //       {
-      //         label: "Fact D",
-      //         value: rand()
-      //       }
-      //     ]
-      //   }
-      // };
       var data = {data: {rows: []}};
 
       var val = rand();
       var parts = shuffle([val/3, val/6, val/2]);
-      var parts2 = shuffle([val/6, val/6, val/3, val/3, val/6]);
+      var parts2 = shuffle([val/6, val/6, val/6, val/3, val/6]);
 
       data.data.rows.push(
         {
@@ -158,7 +125,7 @@
 
       val = rand();
       parts = shuffle([val/3, val/6, val/2]);
-      parts2 = shuffle([val/6, val/6, val/3, val/3, val/6]);
+      parts2 = shuffle([val/6, val/6, val/6, val/3, val/6]);
 
       data.data.rows.push(
         {
@@ -213,7 +180,7 @@
 
       val = rand();
       parts = shuffle([val/3, val/6, val/2]);
-      parts2 = shuffle([val/6, val/6, val/3, val/3, val/6]);
+      parts2 = shuffle([val/6, val/6, val/6, val/3, val/6]);
 
       data.data.rows.push(
         {
@@ -268,7 +235,7 @@
 
       val = rand();
       parts = shuffle([val/3, val/6, val/2]);
-      parts2 = shuffle([val/6, val/6, val/3, val/3, val/6]);
+      parts2 = shuffle([val/6, val/6, val/6, val/3, val/6]);
 
       data.data.rows.push(
         {

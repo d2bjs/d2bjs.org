@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   # before_action :set_categories, only: [:index, :show, :recently_updated, :recently_created]
-  # before_action :authenticate_user!, except: [:index, :show, :recently_updated, :recently_created]
+  before_action :authenticate_user!, except: [:examples, :getting_started]
 
   respond_to :html
 

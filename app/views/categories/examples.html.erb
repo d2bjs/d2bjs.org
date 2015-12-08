@@ -10,7 +10,12 @@
   <div class = "categories">
     <% @categories.sort_by(&:name).each do |category| %>
       <div class = "category-header">
-        <div class = "background" style="background-image:url('<%= category.thumbnail.url(:small) %>')"></div>
+        <% if category.fa_icon %>
+          <i class = "fa-background fa fa-<%= category.fa_icon %>"></i>
+        <% else %>
+          <div class = "background" style="background-image:url('<%= category.thumbnail.url(:small) %>')"></div>
+        <% end %>
+
         <h2 class = "container"  >
           <%= category.name %>
         </h2>
@@ -25,15 +30,15 @@
       <div class = "container category">
         <% category.entries.sort_by(&:name).each do |entry| %>
           <div class = "entry">
-            <h3><%= link_to entry.name, entry, class: "link" %></h3>
+            <h3><%= link_to entry.name, [category, entry], class: "link" %></h3>
             <p>
               <%= entry.description %>
             </p>
 
-            <!-- <% if user_signed_in? %>
-              <%= link_to "Edit", edit_category_path(category), remote: true, class: "link" %> |
-              <%= link_to "Destroy", category, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
-            <% end %> -->
+            <% if user_signed_in? %>
+              <%= link_to "Edit", edit_category_entry_path(category, entry), class: "link" %> |
+              <%= link_to "Destroy", entry, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
+            <% end %>
           </div>
         <% end %>
 

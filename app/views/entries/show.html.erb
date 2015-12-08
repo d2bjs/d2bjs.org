@@ -1,4 +1,4 @@
-<div id = "entry">
+<div class = "entry">
 
   <div class = "container" id = "page-header">
     <h1><%= @entry.name %></h1>
@@ -7,15 +7,23 @@
     </p>
   </div>
 
+  <% if user_signed_in? %>
+    <div class = "entry-links container">
+      <%= link_to "Edit", edit_category_entry_path(@category, @entry), class: "link" %>
+      <!-- |
+      <%= link_to "Destroy", @entry, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %> -->
+    </div>
+  <% end %>
+
   <%= content_tag :div,
                   markup(@entry.markdown),
                   class: "markdown-body container" unless @entry.markdown.to_s.empty?
                   %>
 
-  <div class="widgets">
+  <ol class="widgets">
     <% @entry.widgets.each do |widget| %>
       <%= render "widgets/show", :widget => widget %>
     <% end %>
-  </div>
+  </ol>
 
 </div>

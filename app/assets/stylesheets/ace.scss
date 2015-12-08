@@ -1,6 +1,7 @@
-.ace-chrome{
-  background-color: rgba(0,0,0,0) !important;
-}
-.ace_gutter-layer{
+.ace_gutter{
+  // background: rgba(0,0,0,0.05) !important;
   display:none;
+}
+.ace_content, .ace-chrome{
+  background: rgba(0,0,0,0) !important;
 }

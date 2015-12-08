@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :categories do
     resources :entries#, only: [:new, :create]
   end
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
     resources :entries
   end
 
-	root 'categories#examples'
+	root 'welcome#index'
 	resources :entries#, except: [:new, :create]
 	devise_for :users, skip: [:registrations]
 

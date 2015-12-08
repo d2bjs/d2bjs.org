@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20151102023511) do
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "type",                   default: "ExampleCategory"
+    t.string   "fa_icon"
     t.string   "thumbnail_file_name"
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"

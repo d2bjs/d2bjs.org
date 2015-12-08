@@ -1,0 +1,25 @@
+<iframe scrolling="no" class="iframe-chart"></iframe>
+
+<div class="code-wrapper">
+  <div class="code-buttons">
+    <div class="js-button" data-type="js">JS</div>
+    <div class="html-button" data-type="html">HTML</div>
+    <div class="css-button" data-type="css">CSS</div>
+  </div>
+  <div class="code-container js-container">
+    <div class="error js-error"></div>
+    <div class="code js-editor"></div>
+  </div>
+  <div class="code-container html-container">
+    <div class="error html-error"></div>
+    <div class="code html-editor"></div>
+  </div>
+  <div class="code-container css-container">
+    <div class="error css-error"></div>
+    <div class="code css-editor"></div>
+  </div>
+</div>
+
+<script>
+  (function(){ <%= render 'widgets/setup_editors.js' %> })();
+</script>

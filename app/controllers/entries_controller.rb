@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
 	before_action :set_entry, only: [:show, :edit, :update, :destroy, :data, :data_form]
-	before_action :set_category, only: [:new, :edit, :create]
+	before_action :set_category, only: [:new, :edit, :show, :update, :create]
 	before_action :authenticate_user!, except: [:show]
 	respond_to :html
 
@@ -38,17 +38,17 @@ class EntriesController < ApplicationController
 
   def create
     @entry = @category.entries.create(entry_params)
-    redirect_to examples_path
+		show_it
   end
 
   def update
     @entry.update(entry_params)
-    redirect_to examples_path
+		show_it
   end
 
   def destroy
     @entry.destroy
-    redirect_to examples_path
+    redirect_to :back
   end
 
 
@@ -58,11 +58,28 @@ class EntriesController < ApplicationController
 			@entry = Entry.find(params[:id])
 		end
 		def set_category
-			@category = Category.find(params[:category_id] || params[:example_category_id] || params[:getting_started_category_id])
+			@category = Category.find(
+				params[:category_id] ||
+				params[:example_category_id] ||
+				params[:getting_started_category_id]
+			)
 		end
 
 		def entry_params
-			params.require(:entry).permit(:name, :description, :markdown)
+			params.require(:entry).permit(
+				:name, :description, :markdown,
+				widgets_attributes: [:id, :name, :caption, :css, :html, :js, :markdown, :_destroy]
+			)
+		end
+
+		def show_it
+			if @category.type == "ExampleCategory"
+				redirect_to [@category, @entry]
+			elsif @category.type == "GettingStartedCategory"
+				redirect_to getting_started_path
+			else
+				redirect_to root_url
+			end
 		end
 
 		# Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,62 @@
+<div class = "gauge-chart-demo demo container">
+  <div class = "demo-ind">
+    <div class = "demo-toggle start"></div>
+    <div class = "demo-message">Gauge Chart</div>
+  </div>
+  <div class = "chart"></div>
+</div>
+<script>
+  (function(){
+    var id = "gauge-chart";
+
+    var chartContainer = d3.select('.'+id+'-demo .chart');
+
+    var chart = d2b.CHARTS.gaugeChart()
+      .select('.'+id+'-demo .chart')
+      .color(d3.scale.linear().range(['rgb(214, 39, 40)', 'rgb(255, 255, 0)', 'rgb(44, 160, 44)']).domain([0, 0.6, 1]));
+
+    var currentSlide = 0;
+
+    var interval;
+
+    function resize(){
+      var width = chartContainer.node().getBoundingClientRect().width;
+      chart
+        .width(width)
+        .height(300)
+        .animationDuration(500);
+    }
+
+    $('.'+id+'-demo .demo-toggle').click(function(){
+      var button = $(this);
+
+      if(button.hasClass("start")) interval = setInterval(switchSlides, 2000);
+      else clearInterval(interval);
+
+      button.toggleClass("start");
+      button.toggleClass("stop");
+    });
+
+    $(window).on('resize.'+id+'-demo', function(){
+      resize();
+      chart.animationDuration(0).update().animationDuration(500)
+    });
+    resize();
+
+    function switchSlides(){
+      var val = Math.random();
+      var data = {
+        data:{
+          percent: val,
+          colorKey: val
+        }
+      };
+      chart
+        .data(data)
+        .update();
+    }
+
+    switchSlides();
+
+  })();
+</script>

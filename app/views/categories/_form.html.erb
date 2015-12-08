@@ -13,7 +13,12 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "name-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fa_icon, "Font Awesome Icon" %><br>
+    <%= f.text_field :fa_icon%>
   </div>
 
   <div class="field">
@@ -22,6 +27,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>

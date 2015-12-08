@@ -44,17 +44,17 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(type: params[:type])
     @category.update(category_params)
-    redirect_to examples_path
+    redirect_to :back
   end
 
   def update
     @category.update(category_params)
-    redirect_to examples_path
+    redirect_to :back
   end
 
   def destroy
     @category.destroy
-    redirect_to examples_path
+    redirect_to :back
   end
 
   private
@@ -63,7 +63,7 @@ class CategoriesController < ApplicationController
     end
 
     def category_params
-      params.require(params[:type].underscore.to_sym).permit(:name, :thumbnail)#, :entry_ids => [])
+      params.require(params[:type].underscore.to_sym).permit(:name, :thumbnail, :fa_icon)#, :entry_ids => [])
     end
 
     # def set_categories

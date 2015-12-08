@@ -3,7 +3,7 @@
   &:nth-child(#{$nth}+1) { clear: none }
 }
 
-#examples{
+#examples, #getting-started{
   .category-header{
     background: $light_grey;
     color: white;
@@ -16,26 +16,58 @@
       z-index: 2;
       height: 100%;
       background-size: cover;
+      @include breakpoint(0px)  {
+        padding: 15px;
+        font-size: 20px;
+      }
+      @include breakpoint(800px)  {
+        padding: 25px;
+        font-size: 25px;
+      }
+      @include breakpoint(1100px) {
+        padding: 35px;
+        font-size: 30px;
+      }
+    }
+    .background, .fa-background{
+      z-index: 1;
+      position:absolute;
+      // left:0;
+      width: 100%;
+      height: 100%;
     }
     .background{
       opacity: 0.5;
       -webkit-filter: grayscale(100%) contrast(30%);
       filter: grayscale(100%) contrast(30%);
       background-position: 50% 35%;
-      z-index: 1;
-      position:absolute;
       top:0;
       left:0;
-      width: 100%;
-      height: 100%;
       background-size: cover;
+    }
+    .fa-background{
+      color: black;
+      opacity: 0.12;
+      left:0;
+      @include breakpoint(0px)  {
+        top:-100px;
+        font-size: 300px;
+      }
+      @include breakpoint(800px)  {
+        top:-125px;
+        font-size: 380px;
+      }
+      @include breakpoint(1100px) {
+        top:-150px;
+        font-size: 460px;
+      }
     }
   }
 
   .category-options{
     color: black;
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     z-index: 3;
     -webkit-transform: translateX(-50%);

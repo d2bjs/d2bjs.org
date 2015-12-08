@@ -7,17 +7,16 @@ body {
 }
 
 .container{
-  // padding: 20px 40px;
   @include outer-container;
   max-width: 100%;
-  padding: 40px;
+  padding: 30px;
 }
 
 #page-header{
+
   background: $dark_blue;
   color:white;
-	padding:20px 40px 50px 40px;
-	// margin-bottom: 20px;
+
 	font-weight:100;
 	p{
 		font-size: 20px;
@@ -27,13 +26,6 @@ body {
 
 h1{
 	font-size: 60px;
-}
-
-@mixin transition($duration) {
-  -webkit-transition: all $duration;
-     -moz-transition: all $duration;
-      -ms-transition: all $duration;
-          transition: all $duration;
 }
 
 footer{
@@ -69,9 +61,6 @@ a{
 // }
 
 //
-// #{$all-text-inputs} {
-// 	padding: 5px 10px;
-// }
 //
 //
 // textarea {
@@ -79,15 +68,58 @@ a{
 // }
 //
 //
-// #{$all-text-inputs},
-// select,
-// textarea {
-// 	width: 100%;
-//
-// 	background-color: #fcfcfc;
-// 	border: 1px solid #eee;
-// 	resize: none;
-// }
+#{$all-text-inputs},
+select,
+textarea {
+  @include box_shadow;
+
+	width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+	border: 1px solid $light_grey;
+	resize: none;
+	margin-top: 5px;
+	padding: 10px;
+	font-size: 10pt;
+}
+
+.field {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+textarea{
+  height: 100px;
+}
+input[type="submit"]{
+	@include transition(0.25s);
+
+	width: 100%;
+	color: $light_red;
+	font-weight: bold;
+	font-size: 10pt;
+	background: none;
+	border: 1px solid $light_red;
+	border-radius: 4px;
+	padding: 10px 0px;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	&:hover{
+		background: $light_red;
+		color: white;
+	}
+}
+
+.name-input{
+	font-size: 15pt;
+	font-weight: bold;
+}
+.name-input2{
+	font-size: 13pt;
+	font-weight: bold;
+}
+
 //
 // select{
 // 	padding:10px;

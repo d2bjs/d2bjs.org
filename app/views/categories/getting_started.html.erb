@@ -7,14 +7,80 @@
     </p>
   </div>
 
-  <ol>
+  <div class = "categories">
+
     <% @categories.each do |category| %>
-      <h2 class = "container">
-        <li>
+      <div class = "category-header">
+        <% if category.fa_icon %>
+          <div class = "fa-background"><i class="fa fa-<%= category.fa_icon %>"></i></div>
+        <% else %>
+          <div class = "background" style="background-image:url('<%= category.thumbnail.url(:small) %>')"></div>
+        <% end %>
+
+        <h2 class = "container"  >
           <%= category.name %>
-        </li>
-      </h2>
+        </h2>
+
+        <% if user_signed_in? %>
+          <div class = "category-options">
+            <%= link_to "Edit", edit_category_path(category), class: "link", remote: true %> |
+            <%= link_to "Destroy", category, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
+          </div>
+        <% end %>
+      </div>
+
+      <% category.entries.each do |entry| %>
+
+        <div class="entry container">
+
+          <div class = "entry-header">
+            <%= content_tag :h2, entry.name, class: "entry-header" if !entry.name.empty? %>
+
+            <% if user_signed_in? %>
+              <div class = "entry-links">
+                <%= link_to "Edit", edit_category_entry_path(category, entry), class: "link" %> |
+                <%= link_to "Destroy", entry, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
+              </div>
+            <% end %>
+
+            <p>
+              <%= entry.description %>
+            </p>
+          </div>
+
+
+          <%= content_tag :div,
+                          markup(entry.markdown),
+                          class: "markdown-body" unless entry.markdown.to_s.empty?
+                          %>
+
+          <ol class="widgets">
+            <% entry.widgets.each do |widget| %>
+              <%= render "widgets/show", :widget => widget %>
+            <% end %>
+          </ol>
+
+        </div>
+
+      <% end %>
+
+      <% if user_signed_in? %>
+        <div class = "entry container">
+          <%= link_to new_category_entry_path(category) do %>
+            <h3 class = "link new-entry-button">New Entry +</h3>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
-  </ol>
+
+
+    <% if user_signed_in? %>
+      <%= link_to new_getting_started_category_path, remote: true do %>
+        <div class = "category-header new-category-button">
+            <h2 class="container">New Category +</h2>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
 </div>

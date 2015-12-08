@@ -1,18 +1,5 @@
-<iframe scrolling="no" class="iframe-chart" id="chart-<%= widget.id %>"></iframe>
+<%= hidden_field_tag 'js', widget.js, class: "js-hidden-value" %>
+<%= hidden_field_tag 'html', widget.html, class: "html-hidden-value" %>
+<%= hidden_field_tag 'css', widget.css, class: "css-hidden-value" %>
 
-<div code-wrapper" id="code-wrapper-<%= widget.id %>">
-  <div class="code-buttons" id="code-buttons-<%= widget.id %>">
-    <div class="js-button" data-type="js">JS</div>
-    <div class="html-button" data-type="html">HTML</div>
-    <div class="css-button" data-type="css">CSS</div>
-  </div>
-  <div class="code js-editor" id="javascript-editor-<%= widget.id %>"><%= widget.js %></div>
-  <div class="code html-editor" id="html-editor-<%= widget.id %>"><%= widget.html %></div>
-  <div class="code css-editor" id="css-editor-<%= widget.id %>"><%= widget.css %></div>
-</div>
-
-<script>
-  (function(){
-    <%= render 'widgets/setup_code_editors.js', :widget => widget %>
-  })();
-</script>
+<%= render 'widgets/embedded_components' %>

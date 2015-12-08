@@ -16,6 +16,7 @@ gem 'devise'
 gem 'cocoon'
 gem 'paperclip'
 gem 'underscore-rails'
+gem 'ace-rails-ap'
 
 group :development, :test do
 	gem 'byebug'

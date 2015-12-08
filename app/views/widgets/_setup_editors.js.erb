@@ -1,0 +1,115 @@
+// Base iframe template
+var base_tpl =
+    "<!doctype html>\n" +
+    "<html>\n\t" +
+    "<head>\n\t\t" +
+    "<meta charset=\"utf-8\">\n\t\t" +
+    "<title>Test</title>\n\n\t\t\n\t" +
+    "<script src='/assets/iframe-vendor.js' charset='utf-8'><\/script>"+
+    "<link rel='stylesheet' href='/assets/iframe-vendor.css' type='text/css' media='screen'>"+
+    "</head>\n\t" +
+    "<body>\n\t\n\t" +
+    "<div id='chart-iframe-wrap'></div>"+
+    "</body>\n" +
+    "</html>";
+
+var container = $(".widget").last();
+
+var html_editor = newEditor("html");
+var js_editor = newEditor("js", "javascript");
+var css_editor = newEditor("css");
+
+render(false);
+
+container.find(".code-buttons div").click(function(){
+  var type = $(this).data('type');
+  changeCodeType(type);
+});
+changeCodeType('js');
+
+function changeCodeType(type){
+  container.find(".code-buttons div").removeClass('active');
+  container.find("."+type+"-button").addClass('active');
+  container.find(".code-container").removeClass('active');
+  container.find("."+type+"-container").addClass('active');
+};
+
+function prepareSource() {
+  var html = html_editor.getValue(),
+      css = css_editor.getValue(),
+      js = js_editor.getValue(),
+      src = '';
+  // HTML
+  src = base_tpl.replace('</div>', html + '</div>');
+  // CSS
+  css = '<style>' + css + '</style>';
+  src = src.replace('</head>', css + '</head>');
+  // Javascript
+  js = '<script>try{' + js + '}catch(error){'+
+       'd3.select("body").append("div").attr("class", "error").text(error)'+
+       '}<\/script>';
+  src = src.replace('</body>', js + '</body>');
+
+  return src;
+};
+
+function resizeFrame() {
+  var iframeChart = $(this).contents().find("#chart-iframe-wrap");
+  var iframeHeight = iframeChart.height() + 10;
+  d3.select(this).style('height', iframeHeight + 'px');
+};
+
+function render(scroll) {
+  var source = prepareSource();
+  var scrollTop     = $(window).scrollTop();
+  var iframe = container.find(".iframe-chart"),
+      iframeDoc = iframe.get(0).contentDocument,
+      elementOffset = container.find(".code-wrapper").offset().top,
+      distance      = (elementOffset - scrollTop);
+
+  iframeDoc.open();
+  iframeDoc.write(source);
+  iframeDoc.close();
+
+  iframe.load(resizeFrame);
+
+  elementOffset = container.find(".code-wrapper").offset().top;
+  if(scroll !== false) $(window).scrollTop(elementOffset - distance);
+};
+
+function updateErrorField(editor, errorField){
+  var iframe = container.find(".iframe-chart"),
+      iframeError = iframe.contents().find(".error"),
+      annotations = editor.getSession().getAnnotations(),
+      errors = annotations.filter(function(d){ return d.type === "error" });
+
+  if(errors[0] && errors[0].text) errorField.text(errors[0].text);
+  else if(iframeError && iframeError.text()) errorField.text(iframeError.text());
+  else errorField.text(" ");
+};
+
+function newEditor(type, aceType) {
+  aceType = aceType || type;
+  var hidden = container.find("."+type+"-hidden-value");
+  var error = container.find("."+type+"-error");
+  var editor = ace.edit(container.find("."+type+"-editor").get(0));
+  var debounce = _.debounce(function(){
+    render();
+    hidden.val(editor.getValue());
+  }, 100);
+  editor.getSession().on("changeAnnotation", function(){
+    updateErrorField(editor, error);
+  });
+  // editor.session.setOption("useWorker", false);
+  editor.renderer.setScrollMargin(20, 20, 0, 0);
+  editor.$blockScrolling = Infinity;
+  editor.setFontSize(16);
+  editor.setTheme("ace/theme/chrome");
+  editor.setOptions({ maxLines: Infinity, minLines: 10 });
+  editor.setShowPrintMargin(false);
+  editor.getSession().setMode("ace/mode/"+aceType);
+  editor.setValue(hidden.val(), 1);
+  editor.getSession().on('change', debounce);
+
+  return editor;
+};

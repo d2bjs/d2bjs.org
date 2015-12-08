@@ -123,7 +123,7 @@ axisChart.entries.create(
   name: 'Line Chart',
   description: 'Simple x, y line chart.',
   # markdown: '',
-  widgets: [EmbeddedWidget.create()]
+  widgets: [EmbeddedWidget.create(), EmbeddedWidget.create()]
 )
 
 sunburst = ExampleCategory.create(
@@ -159,7 +159,8 @@ sankey.entries.create(
 
 utilities = ExampleCategory.create(
   name: 'Utilities',
-  thumbnail: File.new("#{image_dir}/categories/utilities.png"),
+  fa_icon: 'cogs',
+  # thumbnail: File.new("#{image_dir}/categories/utilities.png"),
 )
 
 utilities.entries.create(
@@ -188,5 +189,6 @@ utilities.entries.create(
 setup = GettingStartedCategory.create name: 'Setup'
 
 setup.entries.create(
-  markdown: 'Here you can get started by downloading the lates of d2b.'
+  markdown: 'Here you can get started by downloading the lates of d2b.',
+  widgets: [Widget.create]
 )

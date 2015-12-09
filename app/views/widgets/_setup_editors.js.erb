@@ -81,15 +81,16 @@ function render(scroll) {
 
   iframe.unbind("load");
 
-  iframeDoc.open();
-  iframeDoc.write(source);
-  iframeDoc.close();
-
   iframe.on("load", function(){
     resizeFrame.call(this);
     elementOffset = codeWrapper.offset().top;
     if(scroll !== false) $(window).scrollTop(elementOffset - elementDistance);
   });
+
+  iframeDoc.open();
+  iframeDoc.write(source);
+  iframeDoc.close();
+
 };
 
 function updateErrorField(editor, errorField){

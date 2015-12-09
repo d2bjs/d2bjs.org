@@ -33,8 +33,8 @@
 
         <div class="entry">
 
-          <div class = "entry-header container">
-            <%= content_tag :h2, entry.name, class: "entry-header" if !entry.name.to_s.empty? %>
+          <div class = "entry-content container">
+            <%= content_tag :h2, entry.name if !entry.name.to_s.empty? %>
 
             <% if user_signed_in? %>
               <div class = "entry-links">

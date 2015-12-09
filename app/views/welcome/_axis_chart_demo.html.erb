@@ -41,6 +41,10 @@
     });
     resize();
 
+    function round(val){
+      return Math.round(val * 100) / 100;
+    }
+
     function switchSlides(){
       switch(currentSlide){
         case 1:
@@ -52,11 +56,11 @@
                   graphs: [
                     {
                         label: 'Sine',
-                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.sin(d)}; })
+                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.sin(d))}; })
                     },
                     {
                         label: 'Cosine',
-                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.cos(d)}; })
+                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.cos(d))}; })
                     }
                   ]
                 }
@@ -77,11 +81,11 @@
                   graphs: [
                     {
                         label: 'Sine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.sin(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.sin(d))}; })
                     },
                     {
                         label: 'Cosine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.cos(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.cos(d))}; })
                     }
                   ]
                 }
@@ -102,11 +106,11 @@
                   graphs: [
                     {
                         label: 'Sine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.sin(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.sin(d))}; })
                     },
                     {
                         label: 'Cosine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.cos(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.cos(d))}; })
                     }
                   ]
                 }
@@ -128,11 +132,11 @@
                   graphs: [
                     {
                         label: 'Sine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.sin(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.sin(d))}; })
                     },
                     {
                         label: 'Cosine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.cos(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.cos(d))}; })
                     }
                   ]
                 }
@@ -154,11 +158,11 @@
                   graphs: [
                     {
                         label: 'Sine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.sin(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.sin(d))}; })
                     },
                     {
                         label: 'Cosine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.cos(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.cos(d))}; })
                     }
                   ]
                 }
@@ -180,11 +184,11 @@
                   graphs: [
                     {
                         label: 'Sine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.sin(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.sin(d))}; })
                     },
                     {
                         label: 'Cosine',
-                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.cos(d)}; })
+                        values: d3.range(-Math.PI * 2, 0, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.cos(d))}; })
                     }
                   ]
                 }
@@ -206,11 +210,11 @@
                   graphs: [
                     {
                         label: 'Sine',
-                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.sin(d)}; })
+                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.sin(d))}; })
                     },
                     {
                         label: 'Cosine',
-                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: d, y: Math.cos(d)}; })
+                        values: d3.range(-Math.PI * 2, Math.PI * 2, Math.PI * 1/20).map(function(d){ return {x: round(d), y: round(Math.cos(d))}; })
                     }
                   ]
                 }

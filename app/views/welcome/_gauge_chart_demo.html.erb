@@ -43,10 +43,16 @@
     });
     resize();
 
+    function rand(){
+      return Math.round(Math.random() * 100) / 100;
+    }
+
     function switchSlides(){
-      var val = Math.random();
+      var val = rand();
+      
       var data = {
         data:{
+          label: 'Metric A',
           percent: val,
           colorKey: val
         }

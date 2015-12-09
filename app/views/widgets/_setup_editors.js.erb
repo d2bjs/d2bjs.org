@@ -69,23 +69,26 @@ function resizeFrame() {
   var iframeHeight = iframeChart.height() + 10;
   d3.select(this).style('height', iframeHeight + 'px');
 };
-
+var i = 0;
 function render(scroll) {
   var source = prepareSource();
-  var scrollTop     = $(window).scrollTop();
+  var scrollTop = $(window).scrollTop();
   var iframe = container.find(".iframe-chart"),
       iframeDoc = iframe.get(0).contentDocument,
-      elementOffset = container.find(".code-wrapper").offset().top,
-      distance      = (elementOffset - scrollTop);
+      codeWrapper = container.find(".code-wrapper"),
+      elementOffset = codeWrapper.offset().top,
+      elementDistance = (elementOffset - scrollTop);
+
+  iframe.unbind("load");
 
   iframeDoc.open();
   iframeDoc.write(source);
   iframeDoc.close();
 
-  iframe.load(function(){
+  iframe.on("load", function(){
     resizeFrame.call(this);
-    elementOffset = container.find(".code-wrapper").offset().top;
-    if(scroll !== false) $(window).scrollTop(elementOffset - distance);
+    elementOffset = codeWrapper.offset().top;
+    if(scroll !== false) $(window).scrollTop(elementOffset - elementDistance);
   });
 };
 

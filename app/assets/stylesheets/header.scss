@@ -1,4 +1,6 @@
 header{
+  $mobile-header-breakpoint: 800px;
+
   border-bottom:1px solid $light;
   border-top:1px solid $light;
 	// background: white;
@@ -6,18 +8,52 @@ header{
 	font-weight:100;
 	height:50px;
 
+  .nav-open{
+    padding: 11.5px 20px;
+    cursor:pointer;
+    float:right;
+    font-size: 25px;
+    @include breakpoint($mobile-header-breakpoint) {
+      display:none;
+    }
+  }
+
+  .nav-open, nav a{
+    border-left:1px dotted $light;
+    &:hover{
+      background: $dark_blue;
+      color:$white;
+    }
+  }
+
 	nav{
-		float:right;
+    font-size: 0;
     a{
-      display:inline-block;
+      display:block;
       padding:15.5px;
       font-size:12px;
-      border-left:1px dotted $light;
 
-      &:hover{
-        background: $dark_blue;
-        color:$white;
+
+      @include breakpoint($mobile-header-breakpoint) {
+        display:inline-block;
+        float:right;
       }
+    }
+
+    @include breakpoint(max-width $mobile-header-breakpoint) {
+      width: 100%;
+      position: absolute;
+      z-index: 1000;
+      background: white;
+    	background-image: asset-url('crossword.png');
+      border-top:1px dotted $light;
+      display:none;
+      &.visible{
+        display:block;
+      }
+    }
+    @include breakpoint(min-width $mobile-header-breakpoint) {
+      float:right;
     }
 	}
 

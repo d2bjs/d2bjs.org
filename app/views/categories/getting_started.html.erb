@@ -31,9 +31,9 @@
 
       <% category.entries.each do |entry| %>
 
-        <div class="entry container">
+        <div class="entry">
 
-          <div class = "entry-header">
+          <div class = "entry-header container">
             <%= content_tag :h2, entry.name, class: "entry-header" if !entry.name.to_s.empty? %>
 
             <% if user_signed_in? %>
@@ -46,13 +46,12 @@
             <p>
               <%= entry.description %>
             </p>
+
+            <%= content_tag :div,
+                            markup(entry.markdown),
+                            class: "markdown-body" unless entry.markdown.to_s.empty?
+                            %>
           </div>
-
-
-          <%= content_tag :div,
-                          markup(entry.markdown),
-                          class: "markdown-body" unless entry.markdown.to_s.empty?
-                          %>
 
           <ol class="widgets">
             <% entry.widgets.each do |widget| %>

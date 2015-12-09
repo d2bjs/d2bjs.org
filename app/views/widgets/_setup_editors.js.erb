@@ -27,13 +27,22 @@ container.find(".code-buttons div").click(function(){
   var type = $(this).data('type');
   changeCodeType(type);
 });
-changeCodeType('js');
+
+var visibleCode;
+changeCodeType(container.find(".code-visibility-value:checked").val() || container.find(".code-visibility-value").val());
 
 function changeCodeType(type){
   container.find(".code-buttons div").removeClass('active');
-  container.find("."+type+"-button").addClass('active');
   container.find(".code-container").removeClass('active');
-  container.find("."+type+"-container").addClass('active');
+
+  if(type !== visibleCode){
+    container.find("."+type+"-button").addClass('active');
+    container.find("."+type+"-container").addClass('active');
+    visibleCode = type;
+  }else{
+    visibleCode = null;
+  }
+
 };
 
 function prepareSource() {
@@ -73,10 +82,11 @@ function render(scroll) {
   iframeDoc.write(source);
   iframeDoc.close();
 
-  iframe.load(resizeFrame);
-
-  elementOffset = container.find(".code-wrapper").offset().top;
-  if(scroll !== false) $(window).scrollTop(elementOffset - distance);
+  iframe.load(function(){
+    resizeFrame.call(this);
+    elementOffset = container.find(".code-wrapper").offset().top;
+    if(scroll !== false) $(window).scrollTop(elementOffset - distance);
+  });
 };
 
 function updateErrorField(editor, errorField){
@@ -99,9 +109,9 @@ function newEditor(type, aceType) {
     render();
     hidden.val(editor.getValue());
   }, 100);
-  editor.getSession().on("changeAnnotation", function(){
-    updateErrorField(editor, error);
-  });
+  // editor.getSession().on("changeAnnotation", function(){
+  //   updateErrorField(editor, error);
+  // });
   // editor.session.setOption("useWorker", false);
   editor.renderer.setScrollMargin(20, 20, 0, 0);
   editor.$blockScrolling = Infinity;

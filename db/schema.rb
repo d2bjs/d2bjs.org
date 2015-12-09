@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102023511) do
+ActiveRecord::Schema.define(version: 20151209162750) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20151102023511) do
     t.text     "js",                 default: "var chart = d2b.CHARTS.axisChart();\n\nchart.select('.chart')\n\t.width($(window).width())\n\t.update();\n\nwindow.onresize = function(){\n\tchart.width($(window).width()).update();\n};"
     t.datetime "created_at",                                                                                                                                                                                                               null: false
     t.datetime "updated_at",                                                                                                                                                                                                               null: false
+    t.string   "code_visibility",    default: "js"
   end
 
 end

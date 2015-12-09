@@ -68,7 +68,7 @@ class EntriesController < ApplicationController
 		def entry_params
 			params.require(:entry).permit(
 				:name, :description, :markdown,
-				widgets_attributes: [:id, :name, :caption, :css, :html, :js, :markdown, :_destroy]
+				widgets_attributes: [:id, :name, :caption, :css, :html, :js, :markdown, :code_visibility, :_destroy]
 			)
 		end
 

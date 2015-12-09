@@ -11,6 +11,17 @@
     <%= f.label :markdown %>
     <%= f.text_area :markdown %>
   </div>
+  <div class="field">
+    Default Code Selection -
+    <%= f.radio_button :code_visibility, "js", class: "code-visibility-value" %>
+    <%= f.label :code_visibility, "JavaScript", :value => "js"  %>
+    <%= f.radio_button :code_visibility, "html", class: "code-visibility-value" %>
+    <%= f.label :code_visibility, "HTML", :value => "html"  %>
+    <%= f.radio_button :code_visibility, "css", class: "code-visibility-value" %>
+    <%= f.label :code_visibility, "CSS", :value => "css"  %>
+    <%= f.radio_button :code_visibility, "none", class: "code-visibility-value" %>
+    <%= f.label :code_visibility, "None", :value => "none"  %>
+  </div>
 
   <%= f.hidden_field :js, class: "js-hidden-value" %>
   <%= f.hidden_field :html, class: "html-hidden-value" %>

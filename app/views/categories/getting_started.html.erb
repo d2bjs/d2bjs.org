@@ -29,39 +29,41 @@
         <% end %>
       </div>
 
-      <% category.entries.each do |entry| %>
+      <div class="entries">
+        <% category.entries.each do |entry| %>
 
-        <div class="entry">
+          <div class="entry">
 
-          <div class = "entry-content container">
-            <%= content_tag :h2, entry.name if !entry.name.to_s.empty? %>
+            <div class = "entry-content container">
+              <%= content_tag :h2, entry.name if !entry.name.to_s.empty? %>
 
-            <% if user_signed_in? %>
-              <div class = "entry-links">
-                <%= link_to "Edit", edit_category_entry_path(category, entry), class: "link" %> |
-                <%= link_to "Destroy", entry, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
-              </div>
-            <% end %>
+              <% if user_signed_in? %>
+                <div class = "entry-links">
+                  <%= link_to "Edit", edit_category_entry_path(category, entry), class: "link" %> |
+                  <%= link_to "Destroy", entry, method: :delete, data: { confirm: "Are you sure?" }, class: "link" %>
+                </div>
+              <% end %>
 
-            <p>
-              <%= entry.description %>
-            </p>
+              <p>
+                <%= entry.description %>
+              </p>
 
-            <%= content_tag :div,
-                            markup(entry.markdown),
-                            class: "markdown-body" unless entry.markdown.to_s.empty?
-                            %>
+              <%= content_tag :div,
+                              markup(entry.markdown),
+                              class: "markdown-body" unless entry.markdown.to_s.empty?
+                              %>
+            </div>
+
+            <ol class="widgets">
+              <% entry.widgets.each do |widget| %>
+                <%= render "widgets/show", :widget => widget %>
+              <% end %>
+            </ol>
+
           </div>
 
-          <ol class="widgets">
-            <% entry.widgets.each do |widget| %>
-              <%= render "widgets/show", :widget => widget %>
-            <% end %>
-          </ol>
-
-        </div>
-
-      <% end %>
+        <% end %>
+      </div>
 
       <% if user_signed_in? %>
         <div class = "entry container">

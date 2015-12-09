@@ -1,7 +1,13 @@
 #getting-started{
   .entry-content{
+    margin-top:0px;
     h2{
       margin-top: 0px;
+    }
+  }
+  .entry:not(:first-child){
+    .container{
+      padding-top:0px;
     }
   }
 }

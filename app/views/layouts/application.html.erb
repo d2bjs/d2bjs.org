@@ -5,7 +5,8 @@
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= javascript_include_tag 'application' %>
 	<link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
-
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%= csrf_meta_tags %>
 </head>
@@ -17,7 +18,8 @@
 		<nav>
 			<%= link_to "Getting Started", getting_started_path %>
 			<%= link_to "Examples", examples_path %>
-			<%= link_to "Wiki", "//github.com/AcademicDashboards/d2b/wiki", target: "_blank" %><%= link_to "Source", "//github.com/AcademicDashboards/d2b", target: "_blank" %>
+			<%= link_to "Wiki", "//gitlab.com/d2b/d2b/wikis/home", target: "_blank" %>
+      <%= link_to "Source", "//gitlab.com/d2b/d2b", target: "_blank" %>
 			<!-- <%= link_to "Sign In", "/users/sign_in" if !user_signed_in?%> -->
 			<%= link_to "Sign Out", "/users/sign_out", method: :delete if user_signed_in?%>
 		</nav>

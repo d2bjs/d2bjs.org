@@ -10,6 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bourbon'
 gem 'neat'
 gem 'd3-rails'
+gem 'vuejs-rails'
 gem 'redcarpet'
 gem 'github-markup'
 gem 'devise'
@@ -17,6 +18,10 @@ gem 'cocoon'
 gem 'paperclip'
 gem 'underscore-rails'
 gem 'ace-rails-ap'
+
+# Sprockets to enable es6 transpiling in assets
+gem 'sprockets-es6'
+gem 'babel-transpiler'
 
 group :development, :test do
 	gem 'byebug'

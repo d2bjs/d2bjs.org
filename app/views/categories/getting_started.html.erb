@@ -54,11 +54,13 @@
                               %>
             </div>
 
-            <ol class="widgets">
-              <% entry.widgets.each do |widget| %>
-                <%= render "widgets/show", :widget => widget %>
-              <% end %>
-            </ol>
+            <% if entry.widgets.length > 0 %>
+              <ol class="widgets">
+                <% entry.widgets.each do |widget| %>
+                  <%= render "widgets/show", :widget => widget %>
+                <% end %>
+              </ol>
+            <% end %>
 
           </div>
 

@@ -16,7 +16,10 @@
 //= require cocoon
 //= require underscore
 //= require d3
+//= require vue
 //= require_tree .
+
+Vue.config.devtools = true;
 
 var _app = {};
 

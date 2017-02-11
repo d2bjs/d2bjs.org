@@ -1,6 +1,6 @@
 .demo{
     position:relative;
-    .demo-ind{
+    .demo-button{
       text-align:center;
       color: white;
       display:table;
@@ -8,36 +8,31 @@
       overflow:hidden;
       border-radius:3px;
       width: 200px;
-      // @include box-shadow;
+      cursor:pointer;
 
-      .demo-toggle{
-        font-weight:bold;
-        font-size: 20px;
-        @include transition(0.25s);
-        background: $light_blue;
-        color: white;
-        padding:10px 20px;
-        cursor:pointer;
-        &:hover{
+      &:hover {
+        .demo-toggle {
           background: $dark_blue;
         }
-        &.start:before{
-          content: "Start Demo";
-        }
-        &.stop:before{
-          content: "Stop Demo";
-        }
+      }
+
+      .demo-toggle{
+        @include transition(0.25s);
+        font-size: 14px;
+        background: $light_blue;
+        color: white;
+        padding:5px 20px;
       }
       .demo-message{
-        padding:5px 10px;
+        @include transition(0.25s);
+        padding:10px 20px;
+        // padding:5px 10px;
+        font-size: 20px;
         background: $light_grey;
-
-        // -moz-box-shadow:    inset 0 0 5px $dark_grey;
-        // -webkit-box-shadow: inset 0 0 5px $dark_grey;
-        // box-shadow:         inset 0 0 5px $dark_grey;
       }
     }
-    .chart{
+    .demo-chart{
       margin:auto;
+      height: 500px;
     }
 }

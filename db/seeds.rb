@@ -14,8 +14,6 @@
 #
 image_dir = "#{Rails.root}/db/seeds/images"
 
-user = User.create email: "admin@academicdashboards.com", password: "informaticsUNM"
-
 # cat_dashboards = Category.create(
 #   name: 'Dashboards'
 # )

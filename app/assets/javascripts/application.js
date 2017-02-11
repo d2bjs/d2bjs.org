@@ -19,7 +19,7 @@
 //= require vue
 //= require_tree .
 
-Vue.config.devtools = true;
+// Vue.config.devtools = true;
 
 var _app = {};
 

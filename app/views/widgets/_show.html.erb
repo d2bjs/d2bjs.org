@@ -1,6 +1,6 @@
 <div class="widget container" id="widget-<%= widget.id %>">
   <%= content_tag :li, widget.name, class: "widget-name" if !widget.name.to_s.empty? %>
-  <br><br>
+  <br>
   <div class="markdown-body"><%= markup(widget.markdown) %></div>
   <%= render "widgets/#{widget.type.underscore}", :widget => widget %>
   <div class="widget-caption"><%= widget.caption %></div>

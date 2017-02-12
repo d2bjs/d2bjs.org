@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209162750) do
+ActiveRecord::Schema.define(version: 20170212154606) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -62,8 +65,8 @@ ActiveRecord::Schema.define(version: 20151209162750) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "widgets", force: :cascade do |t|
     t.integer  "entry_id"
@@ -77,11 +80,11 @@ ActiveRecord::Schema.define(version: 20151209162750) do
     t.text     "markdown"
     t.text     "caption"
     t.integer  "index"
-    t.text     "html",               default: "<div class='chart'></div>"
-    t.text     "css",                default: ".chart{}"
-    t.text     "js",                 default: "var chart = d2b.CHARTS.axisChart();\n\nchart.select('.chart')\n\t.width($(window).width())\n\t.update();\n\nwindow.onresize = function(){\n\tchart.width($(window).width()).update();\n};"
-    t.datetime "created_at",                                                                                                                                                                                                               null: false
-    t.datetime "updated_at",                                                                                                                                                                                                               null: false
+    t.text     "html",               default: "<div id = 'chart'></div>"
+    t.text     "css",                default: "#chart{\n\theight: 500px;\n}"
+    t.text     "js",                 default: "var pie = d2b.chartPie();\n\nvar chart = d3.select('#chart')\n\t.datum([\n\t\t{label: 'arc 1', value: 23},\n\t\t{label: 'arc 2', value: 31},\n\t\t{label: 'arc 3', value: 80},\n\t\t{label: 'arc 4', value: 8}\n\t])\n\t.call(pie);\n\nwindow.addEventListener('resize', function(){\n\tchart.call(pie);\n});"
+    t.datetime "created_at",                                                                                                                                                                                                                                                                                                                                   null: false
+    t.datetime "updated_at",                                                                                                                                                                                                                                                                                                                                   null: false
     t.string   "code_visibility",    default: "js"
   end
 

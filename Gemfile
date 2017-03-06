@@ -19,6 +19,8 @@ gem 'paperclip'
 gem 'underscore-rails'
 gem 'ace-rails-ap'
 
+gem 'figaro'
+
 # Sprockets to enable es6 transpiling in assets
 gem 'sprockets-es6'
 gem 'babel-transpiler'

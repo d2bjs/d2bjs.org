@@ -13,13 +13,13 @@
 <body>
 
 	<header>
-		<span id="logo"><%= link_to "/" do %> D2B.js | Data to DashBoards <% end %></span>
+		<span id="logo"><%= link_to "/" do %> d2b.js | Data to DashBoards <% end %></span>
 		<i class="fa fa-bars nav-open"></i>
 		<nav>
 			<%= link_to "Getting Started", getting_started_path %>
 			<%= link_to "Examples", examples_path %>
-			<%= link_to "Wiki", "//gitlab.com/d2b/d2b/wikis/home", target: "_blank" %>
-      <%= link_to "Source", "//gitlab.com/d2b/d2b", target: "_blank" %>
+			<%= link_to "Wiki", "http://docs.d2bjs.org", target: "_blank" %>
+      <%= link_to "Source", "//github.com/d2bjs/d2b", target: "_blank" %>
 			<!-- <%= link_to "Sign In", "/users/sign_in" if !user_signed_in?%> -->
 			<%= link_to "Sign Out", "/users/sign_out", method: :delete if user_signed_in?%>
 		</nav>
@@ -29,9 +29,8 @@
 		<%= yield %>
 	</div>
 
-	<footer class="container">
-		<%= image_tag 'logo_white.png' %>
-	</footer>
+	<!-- <footer class="container">
+	</footer> -->
 
 	<%= render 'layouts/modal' %>
 

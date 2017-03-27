@@ -129,6 +129,7 @@ function newEditor(type, aceType) {
   //   updateErrorField(editor, error);
   // });
   // editor.session.setOption("useWorker", false);
+  editor.session.setOptions({ tabSize: 2, useSoftTabs: true });
   editor.renderer.setScrollMargin(20, 20, 0, 0);
   editor.$blockScrolling = Infinity;
   editor.setFontSize(16);

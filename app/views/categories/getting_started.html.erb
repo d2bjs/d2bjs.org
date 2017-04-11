@@ -11,7 +11,7 @@
 
     <% @categories.each do |category| %>
       <div class = "category-header">
-        <% if category.fa_icon %>
+        <% if category.fa_icon.blank? %>
           <div class = "fa-background"><i class="fa fa-<%= category.fa_icon %>"></i></div>
         <% else %>
           <div class = "background" style="background-image:url('<%= category.thumbnail.url(:small) %>')"></div>

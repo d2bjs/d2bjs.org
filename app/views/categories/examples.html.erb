@@ -10,10 +10,10 @@
   <div class = "categories">
     <% @categories.sort_by(&:name).each do |category| %>
       <div class = "category-header">
-        <% if category.fa_icon %>
+        <% unless category.fa_icon.blank? %>
           <i class = "fa-background fa fa-<%= category.fa_icon %>"></i>
         <% else %>
-          <div class = "background" style="background-image:url('<%= category.thumbnail.url(:small) %>')"></div>
+          <div class = "background" style="background-image:url('<%= category.thumbnail.url %>')"></div>
         <% end %>
 
         <h2 class = "container"  >

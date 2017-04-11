@@ -18,7 +18,7 @@ gem 'cocoon'
 gem 'paperclip'
 gem 'underscore-rails'
 gem 'ace-rails-ap'
-
+gem 'aws-sdk'
 gem 'figaro'
 
 # Sprockets to enable es6 transpiling in assets

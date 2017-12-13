@@ -7,6 +7,7 @@ Rails.application.config.assets.precompile += %w( d3.min.js )
 Rails.application.config.assets.precompile += %w( vue.js )
 Rails.application.config.assets.precompile += %w( d2b.min.js )
 Rails.application.config.assets.precompile += %w( vue-d2b.min.js )
+Rails.application.config.assets.precompile += %w( d3-sankey.min.js )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

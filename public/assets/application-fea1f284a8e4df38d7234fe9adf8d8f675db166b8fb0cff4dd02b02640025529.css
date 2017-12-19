@@ -1,0 +1,1551 @@
+/* line 4, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* line 1, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/ace.scss */
+.ace_gutter {
+  display: none;
+}
+
+/* line 5, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/ace.scss */
+.ace_content, .ace-chrome {
+  background: transparent !important;
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format("woff");
+}
+/* line 6, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* line 17, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body a {
+  background: transparent;
+}
+
+/* line 21, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+/* line 26, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body strong {
+  font-weight: bold;
+}
+
+/* line 30, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 35, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body img {
+  border: 0;
+}
+
+/* line 39, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 44, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body pre {
+  overflow: auto;
+}
+
+/* line 48, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* line 55, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* line 61, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+/* line 65, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body input {
+  line-height: normal;
+}
+
+/* line 69, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 74, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 79, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+/* line 84, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+/* line 88, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* line 92, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+/* line 97, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+/* line 102, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 111, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+/* line 116, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+/* line 122, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+/* line 133, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+/* line 137, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+/* line 141, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+/* line 145, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+/* line 149, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+/* line 153, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+/* line 157, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body blockquote {
+  margin: 0;
+}
+
+/* line 161, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 168, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+/* line 173, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+/* line 180, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body dd {
+  margin-left: 0;
+}
+
+/* line 184, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+/* line 189, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+/* line 195, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 208, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+/* line 212, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* line 216, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* line 220, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body a:not(:link):not(:visited) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 225, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+/* line 235, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+/* line 239, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+/* line 252, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+/* line 263, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  text-decoration: none;
+}
+
+/* line 274, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+/* line 283, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+/* line 290, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+/* line 294, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+/* line 301, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+/* line 305, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h3 {
+  font-size: 1.3em;
+  line-height: 1.43;
+}
+
+/* line 310, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+/* line 314, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+/* line 318, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+/* line 322, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+/* line 326, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+/* line 330, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+/* line 335, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+/* line 339, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* line 350, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+/* line 358, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+/* line 363, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 371, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body li > p {
+  margin-top: 16px;
+}
+
+/* line 375, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body dl {
+  padding: 0;
+}
+
+/* line 379, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 387, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+/* line 392, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+/* line 398, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+
+/* line 402, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* line 406, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+/* line 414, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body table th {
+  font-weight: bold;
+}
+
+/* line 418, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+/* line 424, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+/* line 429, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* line 433, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* line 438, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+
+/* line 448, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+/* line 454, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+/* line 464, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+/* line 468, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+/* line 478, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+/* line 483, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+/* line 487, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+/* line 499, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* line 504, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+/* line 518, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+/* line 522, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+
+/* line 534, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+/* line 539, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+
+/* line 548, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+/* line 552, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+
+/* line 558, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src {
+  color: #183691;
+}
+
+/* line 569, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+/* line 573, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+/* line 577, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+/* line 582, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+/* line 587, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+/* line 591, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+/* line 598, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+/* line 602, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+/* line 607, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+/* line 612, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+/* line 618, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+/* line 624, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+/* line 629, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+/* line 633, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+/* line 647, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+/* line 651, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+
+/* line 655, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+/* line 660, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/markdown.css */
+.markdown-body :checked + .radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4183c4;
+}
+
+/* line 1, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato';
+  background-image: url(/assets/crossword-2f23f323330dd47e39b3af4892097e56ef0cabf5980e4c2ed794f58d4f629437.png);
+}
+
+/* line 9, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 30px;
+}
+/* line 20, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.container::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 16, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+#page-header {
+  background: #252839;
+  color: white;
+  font-weight: 100;
+}
+/* line 22, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+#page-header p {
+  font-size: 20px;
+  color: #b5b5b7;
+}
+
+/* line 28, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+h1 {
+  font-size: 60px;
+}
+
+/* line 32, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+footer {
+  clear: both;
+  text-align: center;
+  background: #252839;
+}
+/* line 37, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+footer img {
+  width: 70px;
+}
+
+/* line 42, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 46, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+.link {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  border-bottom: 1px solid transparent;
+  color: black;
+}
+/* line 50, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+.link:hover {
+  border-bottom: 1px solid #CE0F3B;
+  color: #CE0F3B;
+}
+
+/* line 72, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select,
+textarea {
+  -webkit-box-shadow: 0px 0px 2px #b5b5b7;
+  -moz-box-shadow: 0px 0px 2px #b5b5b7;
+  box-shadow: 0px 0px 2px #b5b5b7;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid #b5b5b7;
+  resize: none;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 10pt;
+}
+
+/* line 86, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+.field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 90, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+textarea {
+  height: 100px;
+}
+
+/* line 93, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+input[type="submit"] {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  width: 100%;
+  color: #CE0F3B;
+  font-weight: bold;
+  font-size: 10pt;
+  background: none;
+  border: 1px solid #CE0F3B;
+  border-radius: 4px;
+  padding: 10px 0px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 109, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+input[type="submit"]:hover {
+  background: #CE0F3B;
+  color: white;
+}
+
+/* line 115, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+.name-input {
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+/* line 119, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/layout.scss */
+.name-input2 {
+  font-size: 13pt;
+  font-weight: bold;
+}
+
+/* line 1, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.widget {
+  border-top: 2px dotted #d8d8d8;
+}
+/* line 3, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.widget:first-child {
+  border-top: 0px;
+}
+/* line 6, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.widget iframe {
+  width: calc(100vw - 60px);
+  height: 550px;
+  border: 0px;
+  overflow: hidden;
+}
+/* line 13, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.widget iframe.widget-iframe {
+  border: 1px solid #d8d8d8;
+}
+/* line 17, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.widget img {
+  width: 100%;
+}
+/* line 20, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.widget .iframe-link {
+  float: right;
+  color: #444;
+  text-decoration: none;
+}
+/* line 24, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.widget .iframe-link:hover {
+  text-decoration: underline;
+}
+
+/* line 30, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.entry li.widget-name {
+  font-size: 20pt;
+  color: #b5b5b7;
+  margin-left: 35px;
+}
+/* line 35, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.entry ol {
+  padding: 0;
+}
+
+/* line 43, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.code-buttons {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: #CE0F3B;
+}
+/* line 48, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.code-buttons div {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  margin: 0px 5px;
+  width: 70px;
+  display: inline-block;
+  border: 1px solid #CE0F3B;
+  border-radius: 4px;
+  padding: 10px 0px;
+  font-size: 10pt;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 62, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.code-buttons div:hover, .code-buttons div.active {
+  background: #CE0F3B;
+  color: white;
+}
+
+/* line 68, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.code-container {
+  font-size: 15pt;
+  margin: 30px 0px;
+  display: none;
+}
+/* line 74, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.code-container.active {
+  display: block;
+}
+
+/* line 78, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.code {
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+/* line 82, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/show_entry.scss */
+.error {
+  min-height: 20px;
+  color: #b5b5b7;
+  font-size: 12pt;
+  text-align: right;
+}
+
+/* line 1, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header {
+  border-bottom: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
+  color: #252839;
+  font-weight: 100;
+  height: 50px;
+}
+/* line 11, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header .nav-open {
+  padding: 11.5px 20px;
+  cursor: pointer;
+  float: right;
+  font-size: 25px;
+}
+@media screen and (min-width: 800px) {
+  /* line 11, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+  header .nav-open {
+    display: none;
+  }
+}
+/* line 21, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header .nav-open, header nav a {
+  border-left: 1px dotted #d8d8d8;
+}
+/* line 23, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header .nav-open:hover, header nav a:hover {
+  background: #252839;
+  color: #f8f8f8;
+}
+/* line 29, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header nav {
+  font-size: 0;
+}
+/* line 31, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header nav a {
+  display: block;
+  padding: 15.5px;
+  font-size: 12px;
+}
+@media screen and (min-width: 800px) {
+  /* line 31, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+  header nav a {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* line 29, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+  header nav {
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    background-image: url(/assets/crossword-2f23f323330dd47e39b3af4892097e56ef0cabf5980e4c2ed794f58d4f629437.png);
+    border-top: 1px dotted #d8d8d8;
+    display: none;
+  }
+  /* line 51, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+  header nav.visible {
+    display: block;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 29, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+  header nav {
+    float: right;
+  }
+}
+/* line 60, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header a {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: #252839;
+}
+/* line 68, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header #logo {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 2px;
+}
+/* line 72, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header #logo a {
+  font-size: 20px;
+}
+/* line 74, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/header.scss */
+header #logo a:hover {
+  border-bottom: 1px solid #252839;
+}
+
+/* line 7, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .category-header, #getting-started .category-header {
+  background: #b5b5b7;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+/* line 14, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .category-header h2, #getting-started .category-header h2 {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  background-size: cover;
+}
+@media screen and (min-width: 0px) {
+  /* line 14, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category-header h2, #getting-started .category-header h2 {
+    padding: 15px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 14, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category-header h2, #getting-started .category-header h2 {
+    padding: 25px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  /* line 14, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category-header h2, #getting-started .category-header h2 {
+    padding: 35px;
+    font-size: 30px;
+  }
+}
+/* line 32, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .category-header .background, #examples .category-header .fa-background, #getting-started .category-header .background, #getting-started .category-header .fa-background {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* line 38, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .category-header .background, #getting-started .category-header .background {
+  opacity: 0.5;
+  -webkit-filter: grayscale(100%) contrast(30%);
+  filter: grayscale(100%) contrast(30%);
+  background-position: 50% 35%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+/* line 47, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .category-header .fa-background, #getting-started .category-header .fa-background {
+  color: black;
+  opacity: 0.12;
+  left: 0;
+}
+@media screen and (min-width: 0px) {
+  /* line 47, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category-header .fa-background, #getting-started .category-header .fa-background {
+    top: -100px;
+    font-size: 300px;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 47, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category-header .fa-background, #getting-started .category-header .fa-background {
+    top: -125px;
+    font-size: 380px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  /* line 47, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category-header .fa-background, #getting-started .category-header .fa-background {
+    top: -150px;
+    font-size: 460px;
+  }
+}
+/* line 66, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .category-options, #getting-started .category-options {
+  color: black;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 3;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* line 76, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .new-category-button, #getting-started .new-category-button {
+  cursor: pointer;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+}
+/* line 80, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .new-category-button:hover, #getting-started .new-category-button:hover {
+  background: #CE0F3B;
+}
+/* line 85, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .new-entry-button, #getting-started .new-entry-button {
+  margin-top: 35px;
+  color: #b5b5b7;
+  cursor: pointer;
+  display: inline-block;
+}
+/* line 90, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .new-entry-button:hover, #getting-started .new-entry-button:hover {
+  color: #CE0F3B;
+}
+/* line 95, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+#examples .category, #getting-started .category {
+  text-align: center;
+}
+@media screen and (min-width: 500px) {
+  /* line 97, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category .entry, #getting-started .category .entry {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+  }
+  /* line 89, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #examples .category .entry:last-child, #getting-started .category .entry:last-child {
+    margin-right: 0;
+  }
+  /* line 78, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #examples .category .entry:nth-child(2n), #getting-started .category .entry:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 83, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #examples .category .entry:nth-child(2n+1), #getting-started .category .entry:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 97, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category .entry, #getting-started .category .entry {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+  }
+  /* line 2, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category .entry:nth-child(2n), #getting-started .category .entry:nth-child(2n) {
+    margin-right: 2.35765%;
+  }
+  /* line 3, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category .entry:nth-child(2n+1), #getting-started .category .entry:nth-child(2n+1) {
+    clear: none;
+  }
+  /* line 89, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #examples .category .entry:last-child, #getting-started .category .entry:last-child {
+    margin-right: 0;
+  }
+  /* line 78, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #examples .category .entry:nth-child(3n), #getting-started .category .entry:nth-child(3n) {
+    margin-right: 0;
+  }
+  /* line 83, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #examples .category .entry:nth-child(3n+1), #getting-started .category .entry:nth-child(3n+1) {
+    clear: left;
+  }
+}
+@media screen and (min-width: 1100px) {
+  /* line 97, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category .entry, #getting-started .category .entry {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 2, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category .entry:nth-child(3n), #getting-started .category .entry:nth-child(3n) {
+    margin-right: 2.35765%;
+  }
+  /* line 3, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/examples.scss */
+  #examples .category .entry:nth-child(3n+1), #getting-started .category .entry:nth-child(3n+1) {
+    clear: none;
+  }
+  /* line 89, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #examples .category .entry:last-child, #getting-started .category .entry:last-child {
+    margin-right: 0;
+  }
+  /* line 78, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #examples .category .entry:nth-child(4n), #getting-started .category .entry:nth-child(4n) {
+    margin-right: 0;
+  }
+  /* line 83, /Users/kevinwarne/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #examples .category .entry:nth-child(4n+1), #getting-started .category .entry:nth-child(4n+1) {
+    clear: left;
+  }
+}
+
+/* line 2, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/getting_started.scss */
+#getting-started .entry-content {
+  margin-top: 0px;
+}
+/* line 4, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/getting_started.scss */
+#getting-started .entry-content h2 {
+  margin-top: 0px;
+}
+/* line 9, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/getting_started.scss */
+#getting-started .entry:not(:first-child) .container {
+  padding-top: 0px;
+}
+
+/* line 1, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/demo.scss */
+.demo {
+  position: relative;
+}
+/* line 3, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/demo.scss */
+.demo .demo-button {
+  text-align: center;
+  color: white;
+  display: table;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 3px;
+  width: 200px;
+  cursor: pointer;
+}
+/* line 14, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/demo.scss */
+.demo .demo-button:hover .demo-toggle {
+  background: #252839;
+}
+/* line 19, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/demo.scss */
+.demo .demo-button .demo-toggle {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  font-size: 14px;
+  background: #036081;
+  color: white;
+  padding: 5px 20px;
+}
+/* line 26, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/demo.scss */
+.demo .demo-button .demo-message {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  transition: all 0.25s;
+  padding: 10px 20px;
+  font-size: 20px;
+  background: #b5b5b7;
+}
+/* line 34, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/demo.scss */
+.demo .demo-chart {
+  margin: auto;
+  height: 500px;
+}
+
+/* line 5, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/welcome.scss */
+.d2b-logo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* line 20, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+/* line 25, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px;
+}
+/* line 31, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-state {
+  display: none;
+}
+/* line 35, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-trigger {
+  padding: 0.8em 1em;
+}
+/* line 39, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-fade-screen {
+  -webkit-transition: all opacity 0.25s ease;
+  -moz-transition: all opacity 0.25s ease;
+  -ms-transition: all opacity 0.25s ease;
+  transition: all opacity 0.25s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  visibility: hidden;
+  z-index: 99999999999;
+}
+@media screen and (min-width: 53.75em) {
+  /* line 39, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+  .modal .modal-fade-screen {
+    padding-top: 10em;
+  }
+}
+/* line 53, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-fade-screen .modal-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+/* line 59, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-inner {
+  -webkit-transition: all opacity 0.25s ease;
+  -moz-transition: all opacity 0.25s ease;
+  -ms-transition: all opacity 0.25s ease;
+  transition: all opacity 0.25s ease;
+  background: #fff;
+  border-radius: 3px;
+  margin-top: 0;
+  margin: auto;
+  max-height: 95%;
+  overflow: auto;
+  padding: 1.5em;
+  position: relative;
+  width: 95%;
+}
+@media screen and (min-width: 40em) {
+  /* line 59, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+  .modal .modal-inner {
+    max-height: 70%;
+    padding: 3em;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 53.75em) {
+  /* line 59, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+  .modal .modal-inner {
+    width: 50%;
+  }
+}
+/* line 81, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-inner a.cta {
+  color: #fff;
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-top: 1em;
+}
+/* line 87, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-inner a.cta:last-child {
+  padding: 0 2em;
+}
+/* line 93, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 98, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em;
+}
+
+/* line 103, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.modal-open {
+  overflow: hidden;
+}
+
+/* line 108, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.close-button {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  cursor: pointer;
+}
+/* line 113, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.close-button:after, .close-button:before {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 1.5em;
+  width: 0.15em;
+  background: #b5b5b7;
+  content: '';
+  display: block;
+  margin: -3px 0 0 -1px;
+}
+/* line 124, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.close-button:hover:after, .close-button:hover:before {
+  background: #9b9b9e;
+}
+/* line 129, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/modal.scss */
+.close-button:before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* line 1, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/edit_entry.scss */
+.edit-widget {
+  -webkit-box-shadow: 0px 0px 2px #b5b5b7;
+  -moz-box-shadow: 0px 0px 2px #b5b5b7;
+  box-shadow: 0px 0px 2px #b5b5b7;
+  position: relative;
+  background: rgba(200, 200, 200, 0.15);
+  border: 1px solid #b5b5b7 !important;
+  border-radius: 3px;
+  margin: 20px 0px;
+}
+/* line 10, /Users/kevinwarne/Documents/My_Repos/d2b-app/app/assets/stylesheets/edit_entry.scss */
+.edit-widget iframe {
+  width: calc(100vw - 120px);
+}

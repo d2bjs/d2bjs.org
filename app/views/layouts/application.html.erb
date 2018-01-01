@@ -27,7 +27,7 @@
 <body>
 
   <header>
-    <span id="logo"><%= link_to "/" do %> d2b.js | Data to DashBoards <% end %></span>
+    <span id="logo"><%= link_to "/" do %> d2b.js | Data to DashBoards <% end %></span>Star</a>
     <i class="fa fa-bars nav-open"></i>
     <nav>
       <%= link_to "Getting Started", getting_started_path %>
@@ -39,6 +39,11 @@
     </nav>
   </header>
 
+  <div class = 'github-buttons'>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/d2bjs/d2b" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star d2bjs/d2b on GitHub">Star</a>
+  </div>
+
   <div id="main">
     <%= yield %>
   </div>
@@ -48,5 +53,7 @@
 
   <%= render 'layouts/modal' %>
 
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
